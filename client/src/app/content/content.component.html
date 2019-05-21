@@ -1,0 +1,115 @@
+<script src="https://unpkg.com/wavesurfer.js"></script>
+
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <br>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card card-user">
+                    <div class="header bg-danger">
+                        <h4 class="title">Inputs</h4>
+                        <br>
+                    </div>
+
+                    <div class="content">
+                        <form ngNativeValidate (ngSubmit)='myFunc()'>
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <div class="form-group">
+                                        <label>Random Number </label>
+                                        <input type="number" class="form-control" placeholder="A number between 1-100"
+                                           name="ranNumber" min="1" max="100" [(ngModel)]="ranNumber" required>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <div class="form-group">
+                                        <label>Song Length</label>
+                                        <input type="number" class="form-control" placeholder="A number between 100-600"
+                                            min="50" max="600" name="sequence" [(ngModel)]="sequence" required>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <div class="form-group">
+                                        <label>Beats Per Minute</label>
+                                        <input type="number" class="form-control" placeholder="BPM (Tempo)" [(ngModel)]="bpm" name="bpm" required>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <button type="submit" class="btn btn-primary btn-fill pull-right" [disabled]="isDisabled">Generate Music</button>
+                            <div class="clearfix"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="card card-user">
+                    <div class="header bg-danger">
+                        <h4 class="title">Generated Music</h4>
+                        <br>
+                    </div>
+                    <div class="content">
+                        <div class="author">
+                            <br><br><br><br><br><br><br>
+<div>
+<div id="waveform"></div>
+
+<script type="text/javascript">
+
+
+
+</script>
+
+</div>
+
+
+                            <div *ngIf="!isPlayerVisible">
+                                <h5>Music Player will appear here</h5>
+                            </div>
+                            <div>
+
+                                <div *ngIf="isActive" class="text-muted">
+                                  
+                                  <h6>Generating Music, please wait .....</h6>
+                                  <div> <img src="../../assets/img/spinner.gif"></div>
+                                </div>
+                      
+                                <div *ngIf="isPlayerVisible">
+                                  <br>
+                                  <audio controls autoplay id="myaudio">
+                                    <source [src]="mysrc" type="audio/wav">
+                                  </audio>
+                                </div>
+                      
+                              </div>  
+                                                
+                        </div>
+                        
+                    </div>
+                    <div class="footer" *ngIf="isPlayerVisible">
+                            <p class="text-muted text-center">
+                                    <br><br> <i class="fa fa-thumbs-o-up"></i>Liked this sample, get it by email  <i class="fa fa-share-square-o" aria-hidden="true"></i>
+                            </p>    
+                            
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+
+    </div>
+</div>
+

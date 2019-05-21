@@ -1,0 +1,32 @@
+<div class="content">
+  <div class="container-fluid">
+    <div class="row"><br></div>
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="card card-user">
+          <div class="header bg-danger">
+            <h4 class="title">Previous Generated Samples</h4>
+            <br>
+          </div>
+
+          <div class="content">
+            <div class="author">
+              <br><br><br><br><br>
+
+              <div *ngFor="let s of currentlist">
+                <audio controls id="myaudio1">
+                  <source [src]="s" type="audio/wav">
+                </audio>
+                <br><br>
+                <hr>
+                <br>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
